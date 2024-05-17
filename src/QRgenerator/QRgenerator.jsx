@@ -6,6 +6,13 @@ const QRgenerator = () => {
     const [input, setInput]=useState('');
     const [qrCode, setQrCode]= useState('');
     const [show, setShoww]= useState(false);
+    const [primaryColor, setPrimaryColor]= useState('#9000ff');
+
+    const root = document.documentElement;
+    const changeColor = (color) => {
+        setPrimaryColor(color);
+        root.style.setProperty('--primary-color', color);
+    };
 
     const inputHandler = (e)=>{
         setInput(e.target.value)
@@ -31,10 +38,15 @@ const QRgenerator = () => {
     }
     
   return (
+    
     <div>
-        
-        <div className='form'
-        ><h1>
+        <div className="colors">
+            <button className='purple' onClick={() => changeColor('#9000ff')}></button>
+            <button className='green' onClick={() => changeColor('#1fb21f')}></button>
+            <button className='red' onClick={() => changeColor('#e92c2c')}></button> 
+        </div>
+        <div className='form'>
+            <h1>
             QR Code Generator
         </h1>
         <form onSubmit={qrCodeHandler}>
@@ -49,7 +61,7 @@ const QRgenerator = () => {
                 id='qr-code-value'
                 value={qrCode}
                 size={280}
-                fgColor='#9000ff'
+                fgColor={primaryColor}
             />
         </div>
     </div>

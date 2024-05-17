@@ -1,9 +1,39 @@
+:root{
+    --primary-color: #9000ff;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #fefefe;
-    color: #9000ff;
+    color: var(--primary-color)
+}
+.colors{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin : 30px 10px;
+}
+.colors button {
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+}
+.red{
+    background-color: #e92c2c;
+}
+.purple{
+    background-color: #9000ff;
+}
+.green{
+    background-color: #1fb21f;
 }
 form {
     display: flex;
@@ -20,27 +50,14 @@ form {
     height: 20px;
     margin: 3px;
     padding: 10px;
-    border: 1px solid #9000ff;
+    border: 1px solid var(--primary-color);
     border-radius: 4px;
 }
 .form input:focus {
     outline: none; /* Remove default outline */
-    border-color: #9000ff; /* Set border color when focused */
+    border-color: var(--primary-color); /* Set border color when focused */
 }
-.gen {
-    width: 300px;
-    height: 30px;
-    margin: 5px;
-    padding: 10px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: hsl(122, 46%, 49%);
-    color: white;
-}
-.gen:hover{
-    background-color: hsl(122, 46%, 40%);
-}
+
 .coode{
     display: flex;
     flex-direction: column;
@@ -79,8 +96,8 @@ form {
     border: 1px solid #ccc;
     border: none;
     outline: none;
-    color: #9000ff;
-    color: #9000ff;
+    color: var(--primary-color);
+    color: var(--primary-color);
     background: #cacaca;
     cursor: pointer;
     position: relative;
@@ -90,7 +107,7 @@ form {
 
 .glow-on-hover:before {
     content: '';
-    background: linear-gradient(45deg,  #9000ff, #b700ff);
+    background: linear-gradient(45deg,  var(--primary-color), var(--primary-color));
     position: absolute;
     top: -2px;
     left:-2px;
@@ -99,14 +116,14 @@ form {
     filter: blur(5px);
     width: calc(100% + 4px);
     height: calc(100% + 4px);
-    animation: glowing 20s linear-gradient(45deg, #9000ff, #b700ff);
+    animation: glowing 20s linear-gradient(45deg, var(--primary-color), var(--primary-color));
     opacity: 0;
     transition: opacity .3s ease-in-out;
     border-radius: 10px;
 }
 
 .glow-on-hover:active {
-    color: #9000ff;
+    color: var(--primary-color);
 }
 
 .glow-on-hover:active:after {

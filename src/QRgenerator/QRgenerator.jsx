@@ -15,7 +15,21 @@ const QRgenerator = () => {
         setShoww(true);
         setInput('');
     }
+    const look = () => {
+        const linkRegex = /(https?:\/\/[^\s]+)/g;
+        const matches = qrCode.match(linkRegex);
 
+        if (matches && matches.length > 0) {
+            const link = matches[0];
+            window.open(link, '_blank');
+        }
+        else{
+            const searchQuery = encodeURIComponent(qrCode); // Encode the search query
+        const googleSearchUrl = `https://www.google.com/search?q=${searchQuery}`;
+        window.open(googleSearchUrl, '_blank');
+        }
+    }
+    
   return (
     <div>
         
@@ -24,12 +38,12 @@ const QRgenerator = () => {
             QR Code Generator
         </h1>
         <form onSubmit={qrCodeHandler}>
-            <input value={input}  onChange={inputHandler} type="text" name='qrCode' placeholder='Paste a Link !' />
+            <input value={input}  onChange={inputHandler} type="text" name='qrCode' placeholder='Paste a Link or search for somthing in google' />
             <button className='glow-on-hover' disabled={input.trim() =='' ? true : false} onClick={qrCodeHandler} >Generate</button>
         </form>
             
         </div>
-        <div style={{display: show ? 'block' : 'none'}} className='coode'>
+        <div onClick={look} style={{display: show ? 'block' : 'none'}} className='coode'>
             <button className='hide' onClick={()=> setShoww(false)}>x</button>
             <QRCode 
                 id='qr-code-value'

@@ -46,14 +46,14 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid #ccc;
-    padding: 40px;
+    padding: 50px;
     position: relative;
     margin-top: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .hide{
+    margin: 0 5px 5px 0;
     position: absolute;
     top: 12px;
     left: 12px;
@@ -61,7 +61,8 @@ form {
     border: none;
     font-size: 20px;
     border-radius: 20px;
-       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: black;
 }
 .hide:hover{
  

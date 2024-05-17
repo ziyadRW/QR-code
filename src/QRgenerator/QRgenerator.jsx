@@ -34,7 +34,7 @@ const QRgenerator = () => {
             <QRCode 
                 id='qr-code-value'
                 value={qrCode}
-                size={300}
+                size={280}
                 fgColor='#9000ff'
             />
         </div>
